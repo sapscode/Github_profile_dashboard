@@ -17,5 +17,8 @@ client/dist/
 *.log
 npm-debug.log*
 
+# Claude Code local config
+.claude/
+
 # OS files
 .DS_Store
