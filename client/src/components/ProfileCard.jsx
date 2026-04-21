@@ -1,6 +1,7 @@
 import React from 'react';
+import AISummary from './AISummary';
 
-export default function ProfileCard({ profile }) {
+export default function ProfileCard({ profile, repos, activity, languages }) {
   if (!profile) return null;
 
   return (
@@ -57,6 +58,13 @@ export default function ProfileCard({ profile }) {
         >
           View on GitHub →
         </a>
+
+        <AISummary
+          profile={profile}
+          repos={repos}
+          activity={activity}
+          languages={languages}
+        />
       </div>
     </div>
   );

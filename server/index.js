@@ -19,6 +19,7 @@ const cors = require('cors');
 // Imports the router defined in routes/github.js.
 // That file maps URL patterns to githubService function calls.
 const githubRoutes = require('./routes/github');
+const aiRoutes = require('./routes/ai');
 
 const app = express();
 
@@ -44,6 +45,7 @@ app.use(express.json());
 // Example: a route defined as  GET /user/:username  becomes  GET /api/github/user/:username
 // See routes/github.js for all the URL definitions.
 app.use('/api/github', githubRoutes);
+app.use('/api/ai', aiRoutes);
 
 // Health check — a fast endpoint to confirm the server is up and responding.
 // The React app (or a monitoring tool) can hit GET /health to verify the server is alive.

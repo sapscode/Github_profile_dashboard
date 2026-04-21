@@ -102,7 +102,14 @@ export default function App() {
                 {loading.profile ? (
                   <ProfileSkeleton />
                 ) : (
-                  profile && <ProfileCard profile={profile} />
+                  profile && (
+                    <ProfileCard
+                      profile={profile}
+                      repos={repos}
+                      activity={activity}
+                      languages={languages}
+                    />
+                  )
                 )}
 
                 <div className="charts-row">
