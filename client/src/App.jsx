@@ -7,7 +7,9 @@ import LangChart from './components/LangChart';
 import CompareView from './components/CompareView';
 import { ProfileSkeleton, RepoSkeleton, ChartSkeleton } from './components/Skeleton';
 
-const BASE = 'http://localhost:3001/api/github';
+const BASE = import.meta.env.VITE_API_URL
+  ? `${import.meta.env.VITE_API_URL}/api/github`
+  : 'http://localhost:3001/api/github';
 
 async function apiFetch(path) {
   const res = await fetch(`${BASE}${path}`);
